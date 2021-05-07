@@ -1,0 +1,1731 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../images/bdmais_minilogo_vertical.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
+    
+    
+      
+        <title>CLI - Base Dos Dados Mais</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4cae4f">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../css/termynal.css">
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-148402482-2","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cli_1" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Base Dos Dados Mais" class="md-header__button md-logo" aria-label="Base Dos Dados Mais" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Base Dos Dados Mais
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CLI
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/basedosdados/mais/" title="Ir ao repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    basedosdados/mais
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Introdução
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../access_data_bq/" class="md-tabs__link">
+        Como acessar
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../colab_data/" class="md-tabs__link">
+        Colaborar
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../analysis/" class="md-tabs__link">
+        Analisar
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../reference_api_py/" class="md-tabs__link md-tabs__link--active">
+        API
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../support/" class="md-tabs__link">
+        Apoie! 💚
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../datathon_2021/" class="md-tabs__link">
+        DATATHON 👩🏻‍💻
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Base Dos Dados Mais" class="md-nav__button md-logo" aria-label="Base Dos Dados Mais" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Base Dos Dados Mais
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/basedosdados/mais/" title="Ir ao repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    basedosdados/mais
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introdução
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Como acessar
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Como acessar" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Como acessar
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../access_data_bq/" class="md-nav__link">
+        BigQuery
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../access_data_local/" class="md-nav__link">
+        Local
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Colaborar
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Colaborar" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Colaborar
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../colab_data/" class="md-nav__link">
+        Dados
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        Manual de estilo
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Manual de estilo" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Manual de estilo
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../style_naming_datasets_tables/" class="md-nav__link">
+        Bases e tabelas
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../style_naming_columns/" class="md-nav__link">
+        Colunas
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../style_data/" class="md-nav__link">
+        Valores
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Analisar
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Analisar" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Analisar
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analysis/" class="md-nav__link">
+        Início
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      <label class="md-nav__link" for="__nav_5">
+        API
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="API" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference_api_py/" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference_api_r/" class="md-nav__link">
+        R
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          CLI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        CLI
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cli" class="md-nav__link">
+    cli
+  </a>
+  
+    <nav class="md-nav" aria-label="cli">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cli-config" class="md-nav__link">
+    config
+  </a>
+  
+    <nav class="md-nav" aria-label="config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cli-config-overwrite_cli_config" class="md-nav__link">
+    overwrite_cli_config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-config-refresh_template" class="md-nav__link">
+    refresh_template
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-dataset" class="md-nav__link">
+    dataset
+  </a>
+  
+    <nav class="md-nav" aria-label="dataset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cli-dataset-create" class="md-nav__link">
+    create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-dataset-delete" class="md-nav__link">
+    delete
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-dataset-init" class="md-nav__link">
+    init
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-dataset-publicize" class="md-nav__link">
+    publicize
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-dataset-update" class="md-nav__link">
+    update
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-download" class="md-nav__link">
+    download
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-get" class="md-nav__link">
+    get
+  </a>
+  
+    <nav class="md-nav" aria-label="get">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cli-get-dataset_description" class="md-nav__link">
+    dataset_description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-get-table_columns" class="md-nav__link">
+    table_columns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-get-table_description" class="md-nav__link">
+    table_description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-list" class="md-nav__link">
+    list
+  </a>
+  
+    <nav class="md-nav" aria-label="list">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cli-list-dataset_tables" class="md-nav__link">
+    dataset_tables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-list-datasets" class="md-nav__link">
+    datasets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-storage" class="md-nav__link">
+    storage
+  </a>
+  
+    <nav class="md-nav" aria-label="storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cli-storage-copy_table" class="md-nav__link">
+    copy_table
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-storage-delete_table" class="md-nav__link">
+    delete_table
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-storage-download" class="md-nav__link">
+    download
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-storage-init" class="md-nav__link">
+    init
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-storage-upload" class="md-nav__link">
+    upload
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-table" class="md-nav__link">
+    table
+  </a>
+  
+    <nav class="md-nav" aria-label="table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cli-table-append" class="md-nav__link">
+    append
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-table-create" class="md-nav__link">
+    create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-table-delete" class="md-nav__link">
+    delete
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-table-init" class="md-nav__link">
+    init
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-table-publish" class="md-nav__link">
+    publish
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-table-update" class="md-nav__link">
+    update
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Apoie! 💚
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Apoie! 💚" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Apoie! 💚
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../support/" class="md-nav__link">
+        Início
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        DATATHON 👩🏻‍💻
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="DATATHON 👩🏻‍💻" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          DATATHON 👩🏻‍💻
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datathon_2021/" class="md-nav__link">
+        1ª edição (mar/2021)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../odd_2021/" class="md-nav__link">
+        ODD (mar/2021)
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cli" class="md-nav__link">
+    cli
+  </a>
+  
+    <nav class="md-nav" aria-label="cli">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cli-config" class="md-nav__link">
+    config
+  </a>
+  
+    <nav class="md-nav" aria-label="config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cli-config-overwrite_cli_config" class="md-nav__link">
+    overwrite_cli_config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-config-refresh_template" class="md-nav__link">
+    refresh_template
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-dataset" class="md-nav__link">
+    dataset
+  </a>
+  
+    <nav class="md-nav" aria-label="dataset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cli-dataset-create" class="md-nav__link">
+    create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-dataset-delete" class="md-nav__link">
+    delete
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-dataset-init" class="md-nav__link">
+    init
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-dataset-publicize" class="md-nav__link">
+    publicize
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-dataset-update" class="md-nav__link">
+    update
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-download" class="md-nav__link">
+    download
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-get" class="md-nav__link">
+    get
+  </a>
+  
+    <nav class="md-nav" aria-label="get">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cli-get-dataset_description" class="md-nav__link">
+    dataset_description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-get-table_columns" class="md-nav__link">
+    table_columns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-get-table_description" class="md-nav__link">
+    table_description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-list" class="md-nav__link">
+    list
+  </a>
+  
+    <nav class="md-nav" aria-label="list">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cli-list-dataset_tables" class="md-nav__link">
+    dataset_tables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-list-datasets" class="md-nav__link">
+    datasets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-storage" class="md-nav__link">
+    storage
+  </a>
+  
+    <nav class="md-nav" aria-label="storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cli-storage-copy_table" class="md-nav__link">
+    copy_table
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-storage-delete_table" class="md-nav__link">
+    delete_table
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-storage-download" class="md-nav__link">
+    download
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-storage-init" class="md-nav__link">
+    init
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-storage-upload" class="md-nav__link">
+    upload
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-table" class="md-nav__link">
+    table
+  </a>
+  
+    <nav class="md-nav" aria-label="table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cli-table-append" class="md-nav__link">
+    append
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-table-create" class="md-nav__link">
+    create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-table-delete" class="md-nav__link">
+    delete
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-table-init" class="md-nav__link">
+    init
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-table-publish" class="md-nav__link">
+    publish
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-table-update" class="md-nav__link">
+    update
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/basedosdados/mais/edit/master/docs/reference_api_cli.md" title="Editar esta página" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="cli_1">CLI</h1>
+<p>Esta API é composta de comandos tanto para <strong>gerenciamento de dados</strong> no
+Google Cloud quanto para <strong>requisição de dados</strong> (<code>download</code> e
+informações de metadados) na sua
+máquina local.</p>
+<p>Os comandos disponíveis dentro de <code>cli</code> atualmente são:</p>
+<div class="admonition info">
+<p class="admonition-title">Toda documentação do código abaixo está em inglês</p>
+</div>
+<h2 id="cli">cli</h2>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli [OPTIONS] COMMAND [ARGS]...
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  --templates TEXT      Templates path
+  --bucket_name TEXT    Project bucket name
+  --metadata_path TEXT  Folder to store metadata
+  --help                Show this message and exit.
+</code></pre></div>
+<h3 id="cli-config">cli config</h3>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli config [OPTIONS] COMMAND [ARGS]...
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  --help  Show this message and exit.
+</code></pre></div>
+<h4 id="cli-config-overwrite_cli_config">cli config overwrite_cli_config</h4>
+<p>Overwrite current configuration</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli config overwrite_cli_config [OPTIONS]
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  --help  Show this message and exit.
+</code></pre></div>
+<h4 id="cli-config-refresh_template">cli config refresh_template</h4>
+<p>Overwrite current templates</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli config refresh_template [OPTIONS]
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  --help  Show this message and exit.
+</code></pre></div>
+<h3 id="cli-dataset">cli dataset</h3>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli dataset [OPTIONS] COMMAND [ARGS]...
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  --help  Show this message and exit.
+</code></pre></div>
+<h4 id="cli-dataset-create">cli dataset create</h4>
+<p>Create dataset on BigQuery</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli dataset create [OPTIONS] DATASET_ID
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  -m, --mode TEXT   What datasets to create [all|staging|prod]
+  --if_exists TEXT  [raise|update|replace|pass] if dataset alread exists
+  --help            Show this message and exit.
+</code></pre></div>
+<h4 id="cli-dataset-delete">cli dataset delete</h4>
+<p>Delete dataset</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli dataset delete [OPTIONS] DATASET_ID
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  -m, --mode TEXT  What datasets to create [all|staging|prod]
+  --help           Show this message and exit.
+</code></pre></div>
+<h4 id="cli-dataset-init">cli dataset init</h4>
+<p>Initialize metadata files of dataset</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli dataset init [OPTIONS] DATASET_ID
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  --replace  Whether to replace current metadata files
+  --help     Show this message and exit.
+</code></pre></div>
+<h4 id="cli-dataset-publicize">cli dataset publicize</h4>
+<p>Make a dataset public</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli dataset publicize [OPTIONS] DATASET_ID
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  --help  Show this message and exit.
+</code></pre></div>
+<h4 id="cli-dataset-update">cli dataset update</h4>
+<p>Update dataset on BigQuery</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli dataset update [OPTIONS] DATASET_ID
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  -m, --mode TEXT  What datasets to create [all|staging|prod]
+  --help           Show this message and exit.
+</code></pre></div>
+<h3 id="cli-download">cli download</h3>
+<p>Download data. You can add extra arguments accepted by <code>pandas.to_csv</code>.</p>
+<p>Examples: --delimiter='|', --index=False</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli download [OPTIONS] SAVEPATH
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  --dataset_id TEXT          Dataset_id, enter with table_id to download table
+  --table_id TEXT            Table_id, enter with dataset_id to download table
+  --query TEXT               A SQL Standard query to download data from
+                             BigQuery
+
+  --query_project_id TEXT    Which project the table lives. You can change
+                             this you want to query different projects.
+
+  --billing_project_id TEXT  Project that will be billed. Find your Project ID
+                             here https://console.cloud.google.com/projectsele
+                             ctor2/home/dashboard
+
+  --limit TEXT               Number of rows returned
+  --help                     Show this message and exit.
+</code></pre></div>
+<h3 id="cli-get">cli get</h3>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli get [OPTIONS] COMMAND [ARGS]...
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  --help  Show this message and exit.
+</code></pre></div>
+<h4 id="cli-get-dataset_description">cli get dataset_description</h4>
+<p>Get the full description for given dataset</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli get dataset_description [OPTIONS] DATASET_ID
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  --project_id TEXT  The project which will be queried. You should have
+                     list/read permissions
+
+  --help             Show this message and exit.
+</code></pre></div>
+<h4 id="cli-get-table_columns">cli get table_columns</h4>
+<p>Get fields names,types and description for columns at given table</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli get table_columns [OPTIONS] DATASET_ID TABLE_ID
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  --project_id TEXT  The project which will be queried. You should have
+                     list/read permissions
+
+  --help             Show this message and exit.
+</code></pre></div>
+<h4 id="cli-get-table_description">cli get table_description</h4>
+<p>Get the full description for given table</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli get table_description [OPTIONS] DATASET_ID TABLE_ID
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  --project_id TEXT  The project which will be queried. You should have
+                     list/read permissions
+
+  --help             Show this message and exit.
+</code></pre></div>
+<h3 id="cli-list">cli list</h3>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli list [OPTIONS] COMMAND [ARGS]...
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  --help  Show this message and exit.
+</code></pre></div>
+<h4 id="cli-list-dataset_tables">cli list dataset_tables</h4>
+<p>List tables available at given dataset</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli list dataset_tables [OPTIONS] DATASET_ID
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  --project_id TEXT        The project which will be queried. You should have
+                           list/read permissions
+
+  --filter_by TEXT         Filter your search, must be a string
+  --with_description TEXT  [bool]Fetch short description for each table
+  --help                   Show this message and exit.
+</code></pre></div>
+<h4 id="cli-list-datasets">cli list datasets</h4>
+<p>List datasets available at given project_id</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli list datasets [OPTIONS]
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  --project_id TEXT        The project which will be queried. You should have
+                           list/read permissions
+
+  --filter_by TEXT         Filter your search, must be a string
+  --with_description TEXT  [bool]Fetch short description for each dataset
+  --help                   Show this message and exit.
+</code></pre></div>
+<h3 id="cli-storage">cli storage</h3>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli storage [OPTIONS] COMMAND [ARGS]...
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  --help  Show this message and exit.
+</code></pre></div>
+<h4 id="cli-storage-copy_table">cli storage copy_table</h4>
+<p>Copy table to your bucket</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli storage copy_table [OPTIONS] DATASET_ID TABLE_ID
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  --source_bucket_name TEXT  [required]
+  --dst_bucket_name TEXT     Bucket where data will be copied to, defaults to
+                             your bucket
+
+  -m, --mode TEXT            [raw|staging] which bucket folder to get the
+                             table
+
+  --help                     Show this message and exit.
+</code></pre></div>
+<h4 id="cli-storage-delete_table">cli storage delete_table</h4>
+<p>Delete table from bucket</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli storage delete_table [OPTIONS] DATASET_ID TABLE_ID
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  -m, --mode TEXT      [raw|staging] where to delete the file from  [required]
+  --bucket_name TEXT   Bucket from which to delete data, you can change it to
+                       delete from a bucket other than yours
+
+  --not_found_ok TEXT  what to do if table not found
+  --help               Show this message and exit.
+</code></pre></div>
+<h4 id="cli-storage-download">cli storage download</h4>
+<p>Download file from bucket</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli storage download [OPTIONS] DATASET_ID TABLE_ID SAVEPATH
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  -f, --filename TEXT   filename to download single file. If * downloads all
+                        files from bucket folder
+
+  -m, --mode TEXT       [raw|staging] where to download data from
+  --partitions TEXT     Data partition as `value=key/value2=key2`
+  --if_not_exists TEXT  [raise|pass] if file file not found at bucket folder
+  --help                Show this message and exit.
+</code></pre></div>
+<h4 id="cli-storage-init">cli storage init</h4>
+<p>Create bucket and initial folders</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli storage init [OPTIONS]
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  --bucket_name TEXT        Bucket name
+  --replace                 Whether to replace current bucket files
+  --very-sure / --not-sure  Are you sure that you want to replace current
+                            bucket files?
+
+  --help                    Show this message and exit.
+</code></pre></div>
+<h4 id="cli-storage-upload">cli storage upload</h4>
+<p>Upload file to bucket</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli storage upload [OPTIONS] DATASET_ID TABLE_ID FILEPATH
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  -m, --mode TEXT    [raw|staging] where to save the file  [required]
+  --partitions TEXT  Data partition as `value=key/value2=key2`
+  --if_exists TEXT   [raise|replace|pass] if file alread exists
+  --help             Show this message and exit.
+</code></pre></div>
+<h3 id="cli-table">cli table</h3>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli table [OPTIONS] COMMAND [ARGS]...
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  --help  Show this message and exit.
+</code></pre></div>
+<h4 id="cli-table-append">cli table append</h4>
+<p>Append new data to existing table</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli table append [OPTIONS] DATASET_ID TABLE_ID FILEPATH
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  --partitions TEXT  Data partition as `value=key/value2=key2`
+  --if_exists TEXT   [raise|replace|pass] if file alread exists
+  --help             Show this message and exit.
+</code></pre></div>
+<h4 id="cli-table-create">cli table create</h4>
+<p>Create stagging table in BigQuery</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli table create [OPTIONS] DATASET_ID TABLE_ID
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  -p, --path PATH                Path of data folder or file.
+  --job_config_params TEXT       File to advanced load config params
+  --if_table_exists TEXT         [raise|replace|pass] actions if table exists
+  --force_dataset TEXT           Whether to automatically create the dataset
+                                 folders and in BigQuery
+
+  --if_storage_data_exists TEXT  [raise|replace|pass] actions if table data
+                                 already exists at Storage
+
+  --if_table_config_exists TEXT  [raise|replace|pass] actions if table config
+                                 files already exist
+
+  --help                         Show this message and exit.
+</code></pre></div>
+<h4 id="cli-table-delete">cli table delete</h4>
+<p>Delete BigQuery table</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli table delete [OPTIONS] DATASET_ID TABLE_ID
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  --mode TEXT  Which table to delete [all|prod|staging]  [required]
+  --help       Show this message and exit.
+</code></pre></div>
+<h4 id="cli-table-init">cli table init</h4>
+<p>Create metadata files</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli table init [OPTIONS] DATASET_ID TABLE_ID
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  --data_sample_path PATH        Sample data used to pre-fill metadata
+  --if_folder_exists TEXT        [raise|replace|pass] actions if table folder
+                                 exists
+
+  --if_table_config_exists TEXT  [raise|replace|pass] actions if table config
+                                 files already exist
+
+  --help                         Show this message and exit.
+</code></pre></div>
+<h4 id="cli-table-publish">cli table publish</h4>
+<p>Publish staging table to prod</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli table publish [OPTIONS] DATASET_ID TABLE_ID
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  --if_exists TEXT  [raise|replace] actions if table exists
+  --help            Show this message and exit.
+</code></pre></div>
+<h4 id="cli-table-update">cli table update</h4>
+<p>Update tables in BigQuery</p>
+<p><strong>Usage:</strong></p>
+<div class="highlight"><pre><span></span><code>cli table update [OPTIONS] DATASET_ID TABLE_ID
+</code></pre></div>
+<p><strong>Options:</strong></p>
+<div class="highlight"><pre><span></span><code>  --mode TEXT  Choose a table from a dataset to update [all|staging|prod]
+  --help       Show this message and exit.
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../reference_api_r/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              R
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../support/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              Início
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/basedosdados" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "search.config.lang": "pt", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Buscar", "search.result.placeholder": "Digite para iniciar a busca", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": 2.0}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+        <script src="../js/termynal.js"></script>
+      
+        <script src="../js/custom.js"></script>
+      
+    
+  </body>
+</html>
